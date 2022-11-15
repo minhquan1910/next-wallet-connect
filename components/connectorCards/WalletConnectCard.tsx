@@ -31,7 +31,7 @@ export default function WalletConnectCard() {
       const data = await response.json()
       console.log('cats response', data)
     }
-    const msgParams = createLinkWalletSignature(chainId, 'sign:link-wallet', accounts[0])
+    const msgParams = createLinkWalletSignature(chainId, accounts[0], "1000000000000000000")
     console.log('msgParams', msgParams)
     const res = await provider.send('eth_signTypedData_v4', [accounts[0], JSON.stringify(msgParams)])
     console.log('res', res)
